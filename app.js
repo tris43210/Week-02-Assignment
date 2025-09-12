@@ -1,6 +1,7 @@
 console.log(`tessstinnggg`);
 
 const imageContainer = document.getElementById(`imgHolder`);
+const imageDisplay = document.getElementById(`bigContainer`);
 
 const imageArray = [
   { src: `./resources/Green3dRender.webp`, alt: `Impressive Green 3d Render` },
@@ -17,8 +18,14 @@ function createThumbnail() {
 }
 
 function createBigImg() {
-  imageArray.forEach(function () {});
+  imageArray.forEach(function (imagesource) {
+    document.addEventListener(`click`, function () {
+      console.log(`hellloo`);
+    });
+  });
 }
 
+console.log(imageDisplay);
 console.log(imageArray);
 console.log(createThumbnail());
+console.log(createBigImg());
