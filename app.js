@@ -5,6 +5,7 @@ const imageContainer = document.getElementById(`imgHolder`);
 const imageArray = [
   { src: `./resources/Green3dRender.webp`, alt: `Impressive Green 3d Render` },
   { src: `./resources/Pink3dRender.webp`, alt: `Impressive Pink 3d Render` },
+  { src: `./resources/Grey3dRender.webp`, alt: `Impressive Grey 3d Render` },
 ];
 
 function createThumbnail() {
@@ -15,6 +16,9 @@ function createThumbnail() {
   });
 }
 
+function createBigImg() {
+  imageArray.forEach(function () {});
+}
+
+console.log(imageArray);
 console.log(createThumbnail());
-console.log(imageArray[0]);
-console.log(imageContainer);

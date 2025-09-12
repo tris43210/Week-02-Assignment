@@ -1,10 +1,23 @@
 * {
   box-sizing: border-box;
   margin: 0px;
-  padding 0px;
+  padding: 0px;
 }
 
-img {
-    width: 100vw; 
-    height: auto; 
+.imgContainer {
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  max-width: fit-content;
+  margin-inline: auto;
+  padding: 1rem;
+}
+
+.imgContainer > img {
+  height: auto;
+}
+
+.big-container {
+  width: 100vw;
+  height: auto;
 }
