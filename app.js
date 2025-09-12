@@ -1,7 +1,9 @@
 console.log(`tessstinnggg`);
 
 const imageContainer = document.getElementById(`imgHolder`);
-const imageDisplay = document.getElementById(`bigContainer`);
+const displayContainer = document.getElementById(`bigContainer`);
+const rightButton = document.getElementById(`right`);
+const leftButton = document.getElementById(`left`);
 
 const imageArray = [
   { src: `./resources/Green3dRender.webp`, alt: `Impressive Green 3d Render` },
@@ -14,18 +16,16 @@ function createThumbnail() {
     let createImg = document.createElement(`img`);
     createImg.src = image.src;
     imageContainer.appendChild(createImg);
-  });
-}
 
-function createBigImg() {
-  imageArray.forEach(function (imagesource) {
-    document.addEventListener(`click`, function () {
-      console.log(`hellloo`);
+    createImg.addEventListener(`click`, function () {
+      displayContainer.innerHTML = ``;
+      let imageDisplay = document.createElement(`img`);
+      imageDisplay.src = image.src;
+      displayContainer.appendChild(imageDisplay);
     });
   });
 }
 
-console.log(imageDisplay);
+console.log(displayContainer);
 console.log(imageArray);
-console.log(createThumbnail());
-console.log(createBigImg());
+createThumbnail();
