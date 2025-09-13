@@ -33,6 +33,7 @@ function createThumbnail() {
 
 function next() {
   rightButton.addEventListener('click', function () {
+    displayContainer.innerHTML = ``
     indexNo = (indexNo + 1) % imageArray.length; 
     let newImg = document.createElement(`img`); 
     newImg.src = imageArray[indexNo].src; 
