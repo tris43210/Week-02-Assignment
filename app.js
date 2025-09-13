@@ -13,6 +13,14 @@ const imageArray = [
 
 let indexNo = 0 
 
+function initPic() {
+  let firstPic = document.createElement(`img`); 
+  firstPic.src = imageArray[0].src
+  displayContainer.appendChild(firstPic); 
+}
+
+
+
 function createThumbnail() {
   imageArray.forEach(function (image, index) {
     let createImg = document.createElement(`img`);
@@ -29,8 +37,6 @@ function createThumbnail() {
   });
 }
 
-
-
 function next() {
   rightButton.addEventListener('click', function () {
     displayContainer.innerHTML = ``
@@ -41,10 +47,18 @@ function next() {
   });
 }
 
+function previous() {
+  leftButton.addEventListener('click', function () {
+    displayContainer.innerHTML = ``;
+    indexNo = (indexNo - 1 + imageArray.length) % imageArray.length; 
+    let newprevImg = document.createElement(`img`); 
+    newprevImg.src = imageArray[indexNo].src; 
+    displayContainer.appendChild(newprevImg);  
+  });
+}
 
 
-next() 
-
-console.log(displayContainer);
-console.log(imageArray);
+initPic(); 
+next();
+previous();
 createThumbnail();
