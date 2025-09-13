@@ -29,13 +29,18 @@ function createThumbnail() {
   });
 }
 
-function next() {
 
+
+function next() {
   rightButton.addEventListener('click', function () {
     indexNo = (indexNo + 1) % imageArray.length; 
-    console.log(imageArray[indexNo].src);  
+    let newImg = document.createElement(`img`); 
+    newImg.src = imageArray[indexNo].src; 
+    displayContainer.appendChild(newImg);  
   });
 }
+
+
 
 next() 
 
