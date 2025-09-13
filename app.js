@@ -11,8 +11,10 @@ const imageArray = [
   { src: `./resources/Grey3dRender.webp`, alt: `Impressive Grey 3d Render` },
 ];
 
+let indexNo = 0 
+
 function createThumbnail() {
-  imageArray.forEach(function (image) {
+  imageArray.forEach(function (image, index) {
     let createImg = document.createElement(`img`);
     createImg.src = image.src;
     imageContainer.appendChild(createImg);
@@ -23,8 +25,19 @@ function createThumbnail() {
       imageDisplay.src = image.src;
       displayContainer.appendChild(imageDisplay);
     });
+    return createImg; 
   });
 }
+
+function next() {
+
+  rightButton.addEventListener('click', function () {
+    indexNo = (indexNo + 1) % imageArray.length; 
+    console.log(imageArray[indexNo].src);  
+  });
+}
+
+next() 
 
 console.log(displayContainer);
 console.log(imageArray);
