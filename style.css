@@ -4,9 +4,8 @@
   padding: 0px;
 }
 
-
 .wrapper {
-  position: relative; 
+  position: relative;
 }
 
 .imgContainer {
@@ -16,10 +15,15 @@
   max-width: fit-content;
   margin-inline: auto;
   padding: 1rem;
+  gap: 10px;
 }
 
 .imgContainer > img {
   height: auto;
+}
+
+.wrapper {
+  position: relative;
 }
 
 .big-container {
@@ -29,24 +33,47 @@
 
 .big-container > img {
   width: 100vw;
+  height: 100vh;
+  object-fit: cover;
 }
 
-
-.selection-container {
-  display: flex;
-  justify-content: space-between;
-  margin-left: 1rem; 
-  margin-right: 1rem;
-  z-index: 3;
-}
-
-
-
-.slct-btn {
-  background-color: rgba(58, 58, 58, 0.622); 
-  color: white;
+.btn {
+  background-color: rgba(58, 58, 58, 0.622);
+  color: rgb(226, 226, 226);
   width: 2rem;
   outline: none;
   border: 1px solid black;
   border-radius: 200px;
+  position: absolute;
+}
+
+.btn:hover {
+  background-color: rgba(105, 105, 105, 0.622);
+  color: rgb(255, 255, 255);
+}
+
+.left {
+  top: 50%;
+  left: 1%;
+}
+
+.right {
+  right: 1%;
+  top: 50%;
+}
+
+/* buttons for tablets, laptops and Desktops */
+
+@media (min-width: 700px) {
+  .btn {
+    font-size: 40px;
+    width: 50px;
+  }
+}
+
+@media (max-width: 1440px) {
+  .big-container > img {
+    width: 100vw;
+    height: auto;
+  }
 }

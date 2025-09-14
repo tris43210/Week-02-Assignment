@@ -11,12 +11,12 @@ const imageArray = [
   { src: `./resources/Grey3dRender.webp`, alt: `Impressive Grey 3d Render` },
 ];
 
-let indexNo = 0 
+let indexNo = 0;
 
 function initPic() {
-  let firstPic = document.createElement(`img`); 
-  firstPic.src = imageArray[0].src
-  displayContainer.appendChild(firstPic); 
+  let firstPic = document.createElement(`img`);
+  firstPic.src = imageArray[0].src;
+  displayContainer.appendChild(firstPic);
 }
 
 function createThumbnail() {
@@ -31,32 +31,31 @@ function createThumbnail() {
       imageDisplay.src = image.src;
       displayContainer.appendChild(imageDisplay);
     });
-    return createImg; 
+    return createImg;
   });
 }
 
 function next() {
-  rightButton.addEventListener('click', function () {
-    displayContainer.innerHTML = ``
-    indexNo = (indexNo + 1) % imageArray.length; 
-    let newImg = document.createElement(`img`); 
-    newImg.src = imageArray[indexNo].src; 
-    displayContainer.appendChild(newImg);  
+  rightButton.addEventListener("click", function () {
+    displayContainer.innerHTML = ``;
+    indexNo = (indexNo + 1) % imageArray.length;
+    let newImg = document.createElement(`img`);
+    newImg.src = imageArray[indexNo].src;
+    displayContainer.appendChild(newImg);
   });
 }
 
 function previous() {
-  leftButton.addEventListener('click', function () {
+  leftButton.addEventListener("click", function () {
     displayContainer.innerHTML = ``;
-    indexNo = (indexNo - 1 + imageArray.length) % imageArray.length; 
-    let newprevImg = document.createElement(`img`); 
-    newprevImg.src = imageArray[indexNo].src; 
-    displayContainer.appendChild(newprevImg);  
+    indexNo = (indexNo - 1 + imageArray.length) % imageArray.length;
+    let newprevImg = document.createElement(`img`);
+    newprevImg.src = imageArray[indexNo].src;
+    displayContainer.appendChild(newprevImg);
   });
 }
 
-
-initPic(); 
+initPic();
 next();
 previous();
 createThumbnail();
