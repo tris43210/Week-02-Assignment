@@ -43,6 +43,7 @@ function next() {
     indexNo = (indexNo + 1) % imageArray.length;
     let newImg = document.createElement(`img`);
     newImg.src = imageArray[indexNo].src;
+    newImg.alt = imageArray[indexNo].alt;
     displayContainer.appendChild(newImg);
   });
 }
@@ -53,6 +54,7 @@ function previous() {
     indexNo = (indexNo - 1 + imageArray.length) % imageArray.length;
     let newprevImg = document.createElement(`img`);
     newprevImg.src = imageArray[indexNo].src;
+    newprevImg.alt = imageArray[indexNo].alt;
     displayContainer.appendChild(newprevImg);
   });
 }
