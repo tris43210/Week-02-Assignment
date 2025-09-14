@@ -1,4 +1,4 @@
-console.log(`tessstinnggg`);
+console.log(`hellooo`);
 
 const imageContainer = document.getElementById(`imgHolder`);
 const displayContainer = document.getElementById(`bigContainer`);
@@ -23,15 +23,17 @@ function createThumbnail() {
   imageArray.forEach(function (image, index) {
     let createImg = document.createElement(`img`);
     createImg.src = image.src;
+    createImg.alt = image.alt;
     imageContainer.appendChild(createImg);
 
     createImg.addEventListener(`click`, function () {
       displayContainer.innerHTML = ``;
       let imageDisplay = document.createElement(`img`);
       imageDisplay.src = image.src;
+      imageDisplay.alt = image.alt;
+
       displayContainer.appendChild(imageDisplay);
     });
-    return createImg;
   });
 }
 
