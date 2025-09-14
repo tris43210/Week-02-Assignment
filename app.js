@@ -19,8 +19,6 @@ function initPic() {
   displayContainer.appendChild(firstPic); 
 }
 
-
-
 function createThumbnail() {
   imageArray.forEach(function (image, index) {
     let createImg = document.createElement(`img`);
